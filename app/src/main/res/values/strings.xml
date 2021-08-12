@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Cat Dogs</string>
+
+    <string name="tab_cats">Cats</string>
+    <string name="tab_dogs">Dogs</string>
+    <string name="tab_unknown">Unknown</string>
+
+    <string name="help">Help</string>
+    <string name="error">error</string>
+</resources>

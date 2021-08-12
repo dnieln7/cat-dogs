@@ -1,0 +1,62 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.CatDogs" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="android:textColor">@color/textPrimary</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.CatDogs.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--Custom-->
+
+    <style name="Theme.CatDogs.Tag" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">5dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Theme.CatDogs.Tag.Text" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="Theme.CatDogs.Progress" parent="Widget.MaterialComponents.LinearProgressIndicator">
+        <item name="indicatorColor">@color/secondary</item>
+    </style>
+
+    <style name="Theme.CatDogs.Icon">
+        <item name="tint">@color/primary</item>
+    </style>
+
+    <style name="Theme.CatDogs.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/textPrimary</item>
+    </style>
+
+    <style name="Theme.CatDogs.Legend" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:drawableTint">@color/primary</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+    <style name="Theme.CatDogs.Icon.Disabled">
+        <item name="tint">@color/textDisabled</item>
+    </style>
+
+    <style name="Theme.CatDogs.Subtitle.Disabled">
+        <item name="android:textColor">@color/textDisabled</item>
+    </style>
+</resources>
