@@ -28,10 +28,6 @@ class CatListAdapter(private val cats: List<Cat>) :
                 }
                 tags.setHasFixedSize(true)
                 tags.adapter = TagAdapter(cat.temperament.split(","))
-//                dogFriendly.visibility = if (cat.dogFriendly < 3) View.GONE else View.VISIBLE
-//                childFriendly.visibility = if (cat.childFriendly < 3) View.GONE else View.VISIBLE
-//                strangerFriendly.visibility =
-//                    if (cat.strangerFriendly < 3) View.GONE else View.VISIBLE
             }
         }
     }
