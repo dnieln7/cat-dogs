@@ -52,4 +52,12 @@
         <item name="android:drawableTint">@color/primaryLight</item>
         <item name="android:drawablePadding">10dp</item>
     </style>
+
+    <style name="Theme.CatDogs.Icon.Disabled">
+        <item name="tint">@color/textOnDarkDisabled</item>
+    </style>
+
+    <style name="Theme.CatDogs.Subtitle.Disabled">
+        <item name="android:textColor">@color/textOnDarkDisabled</item>
+    </style>
 </resources>

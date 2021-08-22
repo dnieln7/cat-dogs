@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
+import com.dnieln7.catdogs.CatDogsApplication
 import com.dnieln7.catdogs.R
 import com.dnieln7.catdogs.databinding.CatsFragmentBinding
 import com.dnieln7.catdogs.utils.ApiState
@@ -24,7 +25,13 @@ class CatsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = CatsFragmentBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this).get(CatsViewModel::class.java)
+
+        val serviceLocator = (requireActivity().application as CatDogsApplication).serviceLocator
+
+        viewModel = ViewModelProvider(
+            this,
+            CatsViewModel.Factory(serviceLocator.catRemoteDataSource)
+        ).get(CatsViewModel::class.java)
 
         binding.refresh.setOnRefreshListener { viewModel.fetchCats() }
         binding.items.setHasFixedSize(true)

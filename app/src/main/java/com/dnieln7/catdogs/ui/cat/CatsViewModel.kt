@@ -1,18 +1,15 @@
 package com.dnieln7.catdogs.ui.cat
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
+import com.dnieln7.catdogs.data.source.cat.CatRemoteDataSource
 import com.dnieln7.catdogs.domain.cat.Breed
-import com.dnieln7.catdogs.network.CatsApi
 import com.dnieln7.catdogs.utils.ApiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CatsViewModel : ViewModel() {
+class CatsViewModel(private val catRemoteDataSource: CatRemoteDataSource) : ViewModel() {
     private val _apiState = MutableLiveData<ApiState>()
     private val _cats = MutableLiveData<List<Breed>>()
 
@@ -28,7 +25,7 @@ class CatsViewModel : ViewModel() {
 
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val result = CatsApi.service.getBreeds(30)
+                val result = catRemoteDataSource.getCats(30)
 
                 withContext(Dispatchers.Main) {
                     _cats.value = result
@@ -40,6 +37,19 @@ class CatsViewModel : ViewModel() {
                     _apiState.value = ApiState.Error("No connection")
                 }
             }
+        }
+    }
+
+    class Factory(private val catRemoteDataSource: CatRemoteDataSource) :
+        ViewModelProvider.Factory {
+
+        @Suppress("UNCHECKED_CAST")
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(CatsViewModel::class.java)) {
+                return CatsViewModel(catRemoteDataSource) as T
+            }
+
+            throw IllegalArgumentException("Unknown ViewModel class")
         }
     }
 }
