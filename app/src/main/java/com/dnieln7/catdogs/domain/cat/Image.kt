@@ -2,7 +2,6 @@ package com.dnieln7.catdogs.domain.cat
 
 
 import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
 
 data class Image(
     @Json(name = "height")
