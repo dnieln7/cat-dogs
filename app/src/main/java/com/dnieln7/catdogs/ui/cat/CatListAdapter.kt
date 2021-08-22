@@ -1,7 +1,6 @@
 package com.dnieln7.catdogs.ui.cat
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
@@ -9,15 +8,15 @@ import coil.load
 import com.dnieln7.catdogs.R
 import com.dnieln7.catdogs.databinding.CatListTileBinding
 import com.dnieln7.catdogs.databinding.TagTextBinding
-import com.dnieln7.catdogs.domain.cat.Breed
+import com.dnieln7.catdogs.domain.cat.Cat
 
-class CatListAdapter(private val cats: List<Breed>) :
+class CatListAdapter(private val cats: List<Cat>) :
     RecyclerView.Adapter<CatListAdapter.CatViewHolder>() {
 
     class CatViewHolder(private val binding: CatListTileBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(cat: Breed) {
+        fun bind(cat: Cat) {
             val uri = cat.image?.url?.toUri()?.buildUpon()?.scheme("https")?.build()
 
             with(binding) {

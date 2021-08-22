@@ -2,7 +2,7 @@ package com.dnieln7.catdogs.domain.cat
 
 import com.squareup.moshi.Json
 
-data class Breed(
+data class Cat(
     @Json(name = "adaptability")
     val adaptability: Int,
     @Json(name = "affection_level")

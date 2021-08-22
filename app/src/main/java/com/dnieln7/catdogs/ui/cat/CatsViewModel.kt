@@ -3,7 +3,7 @@ package com.dnieln7.catdogs.ui.cat
 import android.util.Log
 import androidx.lifecycle.*
 import com.dnieln7.catdogs.data.source.cat.CatRemoteDataSource
-import com.dnieln7.catdogs.domain.cat.Breed
+import com.dnieln7.catdogs.domain.cat.Cat
 import com.dnieln7.catdogs.utils.ApiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -11,9 +11,9 @@ import kotlinx.coroutines.withContext
 
 class CatsViewModel(private val catRemoteDataSource: CatRemoteDataSource) : ViewModel() {
     private val _apiState = MutableLiveData<ApiState>()
-    private val _cats = MutableLiveData<List<Breed>>()
+    private val _cats = MutableLiveData<List<Cat>>()
 
-    val cats: LiveData<List<Breed>> = _cats
+    val cats: LiveData<List<Cat>> = _cats
     val apiState: LiveData<ApiState> = _apiState
 
     init {
