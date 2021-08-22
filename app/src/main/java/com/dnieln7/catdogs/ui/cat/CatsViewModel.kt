@@ -11,7 +11,7 @@ import kotlinx.coroutines.withContext
 
 class CatsViewModel(private val catRemoteDataSource: CatRemoteDataSource) : ViewModel() {
     private val _apiState = MutableLiveData<ApiState>()
-    private val _cats = MutableLiveData<List<Cat>>()
+    private val _cats = MutableLiveData<List<Cat>>(emptyList())
 
     val cats: LiveData<List<Cat>> = _cats
     val apiState: LiveData<ApiState> = _apiState

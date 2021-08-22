@@ -9,25 +9,15 @@ import androidx.lifecycle.ViewModelProvider
 import com.dnieln7.catdogs.databinding.DogsFragmentBinding
 
 class DogsFragment : Fragment() {
-    private var _binding: DogsFragmentBinding? = null
-    private val binding get() = _binding!!
-
-    private lateinit var viewModel: DogsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DogsFragmentBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this).get(DogsViewModel::class.java)
+        val binding = DogsFragmentBinding.inflate(inflater, container, false)
+        val viewModel = ViewModelProvider(this).get(DogsViewModel::class.java)
 
         return binding.root
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        _binding = null
     }
 }

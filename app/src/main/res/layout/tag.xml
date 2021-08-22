@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tag"
+            type="String" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Theme.CatDogs.Tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/Theme.CatDogs.Tag.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{tag}"
+            tools:text="@tools:sample/full_names" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>
